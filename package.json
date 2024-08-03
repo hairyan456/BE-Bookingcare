@@ -1,0 +1,38 @@
+{
+  "name": "source-be",
+  "version": "1.0.0",
+  "description": "Source backend for Booking-care project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/server.js",
+    "build-src": "babel src -d build --copy-files",
+    "build": "node build/server.js"
+  },
+  "author": "Vu Hoang Hai",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.20.2",
+    "cors": "2.8.5",
+    "dotenv": "16.3.1",
+    "ejs": "3.1.9",
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "mysql2": "3.8.0",
+    "nodemailer": "6.6.3",
+    "pg": "8.7.1",
+    "pg-hstore": "2.3.4",
+    "react-toastify": "8.1.0",
+    "sequelize": "6.13.0",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.25.3",
+    "nodemon": "^3.0.2",
+    "sequelize-cli": "6.3.0"
+  }
+}

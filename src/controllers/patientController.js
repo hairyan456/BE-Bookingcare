@@ -1,0 +1,41 @@
+import patientAPIService from '../services/patientAPIService';
+
+const postBookingAppoinment = async (req, res) => {
+    try {
+        let data = await patientAPIService.postBookingAppoinment(req.body);
+        return res.status(200).json({
+            EM: data.EM,
+            EC: data.EC,
+            DT: data.DT,
+        })
+    } catch (error) {
+        console.log('>>> check error from postBookingAppoinment():', error);
+        return res.status(500).json({
+            EM: 'error from server',
+            EC: -1,
+            DT: '',
+        })
+    }
+}
+
+const postVerifyBookAppointment = async (req, res) => {
+    try {
+        let data = await patientAPIService.postVerifyBookAppointment(req.query.doctorId, req.query.token);
+        return res.status(200).json({
+            EM: data.EM,
+            EC: data.EC,
+            DT: data.DT,
+        })
+    } catch (error) {
+        console.log('>>> check error from postVerifyBookAppointment():', error);
+        return res.status(500).json({
+            EM: 'error from server',
+            EC: -1,
+            DT: '',
+        })
+    }
+}
+
+module.exports = {
+    postBookingAppoinment, postVerifyBookAppointment
+}
